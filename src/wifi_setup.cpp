@@ -154,7 +154,7 @@ void wifi_scan_refresh(void) {
         // scanDeleted or failed
         // Serial.println("Scan faile!");
     } else if (n == WIFI_SCAN_RUNNING) {
-        Serial.println("Scaning...");
+        Serial.println("Scanning...");
     }
 }
 
