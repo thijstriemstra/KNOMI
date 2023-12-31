@@ -9,10 +9,10 @@ static AsyncWebServer server(SERVER_PORT);
 const char captive_html[] PROGMEM = R"rawliteral(<html>
 <head>
 <meta http-equiv="refresh" content="2;url=/" />
-<title>For makers! By makers!</title>
+<title>KNOMI</title>
 </head>
 <body>
-You've successfully connected to the BTT KNOMI Screen. Click <a href="/">here</a> to go to the homepage.
+You've successfully connected to the KNOMI. Click <a href="/">here</a> to go to the homepage.
 </body>
 </html>)rawliteral";
 
@@ -214,7 +214,7 @@ void webserver_setup(void) {
             String sta_ssid = knomi_config.sta_ssid;
             String sta_pwd = knomi_config.sta_pwd;
             request->send(200, "text/html", "SSID: " + sta_ssid + "<br>PWD: " + sta_pwd + \
-                    "<br>The BTT KNOMI will now attempt to connect to the specified network.<br>If it fails after 15s then this access point will be re-launched and you can connect to it to try again. <br><a href=\"/\">Return to Home Page</a>");
+                    "<br>The KNOMI will now attempt to connect to the specified network.<br>If it fails after 15s then this access point will be re-launched and you can connect to it to try again. <br><a href=\"/\">Return to Home Page</a>");
         } else if (post_require & WEB_POST_LOCAL_HOSTNAME){
             request->send(200, "text/html", "The hostname needs to be restarted before it takes effect.<br>Please return to the home page and manually restart. <br><a href=\"/\">Return to Home Page</a>");
         } else if (post_require & WEB_POST_RESTART){
