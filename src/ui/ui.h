@@ -261,6 +261,7 @@ LV_IMG_DECLARE(ui_img_btn_cancel_png);    // assets\btn_cancel.png
 LV_IMG_DECLARE(ui_img_popup_png);    // assets\popup.png
 LV_IMG_DECLARE(ui_img_test_png);    // assets\test.png
 
+LV_FONT_DECLARE(ui_font_InterSeimiBold36);
 LV_FONT_DECLARE(ui_font_InterSeimiBold32);
 LV_FONT_DECLARE(ui_font_InterSemiBold14);
 LV_FONT_DECLARE(ui_font_InterSemiBold16);

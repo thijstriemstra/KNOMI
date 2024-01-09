@@ -125,7 +125,7 @@ void lv_loop_set_temp_screen(void) {
     if (last_frontend_target != frontend_target) {
         char string_buffer[8];
         last_frontend_target = frontend_target;
-        snprintf(string_buffer, sizeof(string_buffer), "%d℃", last_frontend_target);
+        snprintf(string_buffer, sizeof(string_buffer), "%d°", last_frontend_target);
         lv_label_set_text(ui_set_temp_target, string_buffer);
     }
 

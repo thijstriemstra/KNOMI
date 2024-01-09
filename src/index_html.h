@@ -3,7 +3,7 @@ const char index_html[] PROGMEM = R"rawliteral(<!DOCTYPE html>
 display: inline-block;
 text-align: center;">
 <head>
-  <title>KNOMI Settings Manager</title>
+  <title>Device Settings Manager</title>
   <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
@@ -426,7 +426,7 @@ text-align: center;">
             popup_clicked = false;
             popup_btn = false;
             document.getElementById("popup_title_id").innerHTML="Restart?";
-            document.getElementById("popup_content_id").innerHTML="KNOMI will disconnect the network connection and restart.<br>Please reconnect after KNOMI restart."
+            document.getElementById("popup_content_id").innerHTML="Device will disconnect from network and restart.<br>Please reconnect after device restarted."
 
             var popup_id = document.getElementById("popup_id");
             popup_id.style.display = "block";
@@ -482,7 +482,7 @@ text-align: center;">
          d="M 360,580 C 64.6719,580 0,363.445 0,280 0,183.152 75.2383,0 360,0 l 270,0 0,180 -270,0 C 198.277,180 181.723,260.371 180.113,280.43 181.793,310.859 200.41,400 360,400 l 270,0 0,180 -270,0"
          id="path24"
          style="fill:#2d2d3f;fill-opacity:1;fill-rule:nonzero;stroke:none" /></g></g></svg>
-    <h1 class="mainTitle">KNOMI Settings Manager</h1>
+    <h1 class="mainTitle">Device Settings</h1>
   </div>
   <div class="content">
     <div class="card-grid">

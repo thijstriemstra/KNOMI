@@ -25,7 +25,7 @@ void ui_ScreenPopup_screen_init(void)
     ui_textarea_popup = lv_textarea_create(ui_img_popup);
     lv_obj_set_width(ui_textarea_popup, 135);
     lv_obj_set_height(ui_textarea_popup, 90);
-    lv_obj_set_x(ui_textarea_popup, 0);
+    lv_obj_set_x(ui_textarea_popup, 5);
     lv_obj_set_y(ui_textarea_popup, -5);
     lv_obj_set_align(ui_textarea_popup, LV_ALIGN_CENTER);
     lv_obj_clear_flag(ui_textarea_popup,
@@ -33,10 +33,18 @@ void ui_ScreenPopup_screen_init(void)
                       LV_OBJ_FLAG_SCROLL_CHAIN);     /// Flags
     lv_obj_set_style_text_color(ui_textarea_popup, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui_textarea_popup, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui_textarea_popup, &ui_font_InterSemiBold14, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui_textarea_popup, &ui_font_InterSemiBold20, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_color(ui_textarea_popup, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_textarea_popup, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_border_width(ui_textarea_popup, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    // Remove the style of scrollbar to have clean start
+    lv_obj_remove_style(ui_textarea_popup, NULL, LV_PART_SCROLLBAR | LV_STATE_ANY);
+    // Make the scrollbars 0% opacity
+    static lv_style_t style_scrolled;
+    lv_style_init(&style_scrolled);
+    lv_style_set_bg_opa(&style_scrolled, LV_OPA_TRANSP);
+    lv_obj_add_style(ui_textarea_popup, &style_scrolled, LV_PART_SCROLLBAR);
 
     ui_btn_popup_ok = lv_imgbtn_create(ui_ScreenPopup);
     lv_imgbtn_set_src(ui_btn_popup_ok, LV_IMGBTN_STATE_RELEASED, NULL, &ui_img_btn_dialog_png, NULL);

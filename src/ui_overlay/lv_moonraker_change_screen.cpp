@@ -202,7 +202,7 @@ void lv_loop_moonraker_change_screen_value(void) {
     static int16_t nozzle_target;
     if (nozzle_target != moonraker.data.nozzle_target) {
         nozzle_target = moonraker.data.nozzle_target;
-        snprintf(string_buffer, sizeof(string_buffer), "%d℃", nozzle_target);
+        snprintf(string_buffer, sizeof(string_buffer), "%d°", nozzle_target);
         lv_label_set_text(ui_label_extruder_target, string_buffer);
         lv_label_set_text(ui_label_temp_nozzle_target, string_buffer);
         lv_label_set_text(ui_label_heating_nozzle_target, string_buffer);
@@ -211,7 +211,7 @@ void lv_loop_moonraker_change_screen_value(void) {
     static int16_t nozzle_actual;
     if (nozzle_actual != moonraker.data.nozzle_actual) {
         nozzle_actual = moonraker.data.nozzle_actual;
-        snprintf(string_buffer, sizeof(string_buffer), "%d℃", nozzle_actual);
+        snprintf(string_buffer, sizeof(string_buffer), "%d°", nozzle_actual);
         lv_label_set_text(ui_label_extruder_actual, string_buffer);
         lv_label_set_text(ui_label_temp_nozzle_actual, string_buffer);
         lv_label_set_text(ui_label_heating_nozzle_actual, string_buffer);
@@ -220,7 +220,7 @@ void lv_loop_moonraker_change_screen_value(void) {
     static int16_t bed_target;
     if (bed_target != moonraker.data.bed_target) {
         bed_target = moonraker.data.bed_target;
-        snprintf(string_buffer, sizeof(string_buffer), "%d℃", bed_target);
+        snprintf(string_buffer, sizeof(string_buffer), "%d°", bed_target);
         lv_label_set_text(ui_label_temp_bed_target, string_buffer);
         lv_label_set_text(ui_label_heating_bed_target, string_buffer);
     }
@@ -228,7 +228,7 @@ void lv_loop_moonraker_change_screen_value(void) {
     static int16_t bed_actual;
     if (bed_actual != moonraker.data.bed_actual) {
         bed_actual = moonraker.data.bed_actual;
-        snprintf(string_buffer, sizeof(string_buffer), "%d℃", bed_actual);
+        snprintf(string_buffer, sizeof(string_buffer), "%d°", bed_actual);
         lv_label_set_text(ui_label_temp_bed_actual, string_buffer);
         lv_label_set_text(ui_label_heating_bed_actual, string_buffer);
     }

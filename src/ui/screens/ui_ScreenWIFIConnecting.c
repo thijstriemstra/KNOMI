@@ -21,7 +21,7 @@ void ui_ScreenWIFIConnecting_screen_init(void)
     lv_obj_set_style_arc_opa(ui_spinner_wifi_connecting, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_arc_width(ui_spinner_wifi_connecting, 16, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    lv_obj_set_style_arc_color(ui_spinner_wifi_connecting, lv_color_hex(0xFF0000), LV_PART_INDICATOR | LV_STATE_DEFAULT);
+    lv_obj_set_style_arc_color(ui_spinner_wifi_connecting, lv_color_hex(0xab59ff), LV_PART_INDICATOR | LV_STATE_DEFAULT);
     lv_obj_set_style_arc_opa(ui_spinner_wifi_connecting, 255, LV_PART_INDICATOR | LV_STATE_DEFAULT);
     lv_obj_set_style_arc_width(ui_spinner_wifi_connecting, 16, LV_PART_INDICATOR | LV_STATE_DEFAULT);
 

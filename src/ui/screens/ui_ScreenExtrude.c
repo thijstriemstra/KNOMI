@@ -66,7 +66,7 @@ void ui_ScreenExtrude_screen_init(void)
     lv_obj_set_x(ui_label_extruder_target, 0);
     lv_obj_set_y(ui_label_extruder_target, -15);
     lv_obj_set_align(ui_label_extruder_target, LV_ALIGN_BOTTOM_MID);
-    lv_label_set_text(ui_label_extruder_target, "0℃");
+    lv_label_set_text(ui_label_extruder_target, "0°");
     lv_obj_set_style_text_font(ui_label_extruder_target, &ui_font_InterSemiBold14, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_label_extruder_actual = lv_label_create(ui_btn_extruder_temp);
@@ -75,8 +75,8 @@ void ui_ScreenExtrude_screen_init(void)
     lv_obj_set_x(ui_label_extruder_actual, 0);
     lv_obj_set_y(ui_label_extruder_actual, 10);
     lv_obj_set_align(ui_label_extruder_actual, LV_ALIGN_TOP_MID);
-    lv_label_set_text(ui_label_extruder_actual, "0℃");
-    lv_obj_set_style_text_color(ui_label_extruder_actual, lv_color_hex(0xFFD164), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_label_set_text(ui_label_extruder_actual, "0°");
+    lv_obj_set_style_text_color(ui_label_extruder_actual, lv_color_hex(0xab59ff), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui_label_extruder_actual, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_font(ui_label_extruder_actual, &ui_font_InterSemiBold14, LV_PART_MAIN | LV_STATE_DEFAULT);
 

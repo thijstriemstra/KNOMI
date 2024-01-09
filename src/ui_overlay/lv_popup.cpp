@@ -59,11 +59,11 @@ static void lv_remove_popup_screen(void) {
 
 void lv_loop_popup_screen(void) {
     if (moonraker.unconnected) {
-        lv_goto_popup_screen(LV_POPUP_UNCONNECT, "Moonraker Connect failed\nPlease check Your printer or KNOMI IP");
+        lv_goto_popup_screen(LV_POPUP_UNCONNECT, "  Moonraker\n\nConnection lost");
         return;
     }
     if (moonraker.unready) {
-        lv_goto_popup_screen(LV_POPUP_PRINTER_ERR, "Printer is Unoperational\nPlease check your Printer");
+        lv_goto_popup_screen(LV_POPUP_PRINTER_ERR, "\nPrinter is not responding");
         return;
     }
     lv_remove_popup_screen();
