@@ -12,18 +12,18 @@ void ui_ScreenWIFIConnecting_screen_init(void)
     lv_obj_set_style_bg_color(ui_ScreenWIFIConnecting, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_ScreenWIFIConnecting, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_spinner_wifi_connecting = lv_spinner_create(ui_ScreenWIFIConnecting, 1000, 45);
+    ui_spinner_wifi_connecting = lv_spinner_create(ui_ScreenWIFIConnecting, 2500, 65);
     lv_obj_set_width(ui_spinner_wifi_connecting, 240);
     lv_obj_set_height(ui_spinner_wifi_connecting, 240);
     lv_obj_set_align(ui_spinner_wifi_connecting, LV_ALIGN_CENTER);
     lv_obj_clear_flag(ui_spinner_wifi_connecting, LV_OBJ_FLAG_CLICKABLE);      /// Flags
     lv_obj_set_style_arc_color(ui_spinner_wifi_connecting, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_arc_opa(ui_spinner_wifi_connecting, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_arc_width(ui_spinner_wifi_connecting, 16, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_arc_width(ui_spinner_wifi_connecting, 30, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    lv_obj_set_style_arc_color(ui_spinner_wifi_connecting, lv_color_hex(0xab59ff), LV_PART_INDICATOR | LV_STATE_DEFAULT);
+    lv_obj_set_style_arc_color(ui_spinner_wifi_connecting, lv_color_hex(0xFFFFFF), LV_PART_INDICATOR | LV_STATE_DEFAULT);
     lv_obj_set_style_arc_opa(ui_spinner_wifi_connecting, 255, LV_PART_INDICATOR | LV_STATE_DEFAULT);
-    lv_obj_set_style_arc_width(ui_spinner_wifi_connecting, 16, LV_PART_INDICATOR | LV_STATE_DEFAULT);
+    lv_obj_set_style_arc_width(ui_spinner_wifi_connecting, 30, LV_PART_INDICATOR | LV_STATE_DEFAULT);
 
     ui_Image7 = lv_img_create(ui_ScreenWIFIConnecting);
     lv_img_set_src(ui_Image7, &ui_img_logo_png);

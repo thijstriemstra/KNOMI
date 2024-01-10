@@ -268,6 +268,7 @@ LV_FONT_DECLARE(ui_font_InterSemiBold16);
 LV_FONT_DECLARE(ui_font_InterSemiBold18);
 LV_FONT_DECLARE(ui_font_InterSemiBold20);
 LV_FONT_DECLARE(ui_font_InterSemiBold24);
+LV_FONT_DECLARE(ui_font_InterSemiBold40);
 LV_FONT_DECLARE(ui_font_InterSemiBold48);
 
 void ui_init(void);

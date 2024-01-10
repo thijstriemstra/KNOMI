@@ -35,7 +35,7 @@ void ui_ScreenTemp_screen_init(void)
     lv_obj_set_y(ui_label_temp_nozzle_target, -15);
     lv_obj_set_align(ui_label_temp_nozzle_target, LV_ALIGN_BOTTOM_MID);
     lv_label_set_text(ui_label_temp_nozzle_target, "0°");
-    lv_obj_set_style_text_font(ui_label_temp_nozzle_target, &ui_font_InterSemiBold48, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui_label_temp_nozzle_target, &ui_font_InterSeimiBold32, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_label_temp_nozzle_actual = lv_label_create(ui_btn_temp_nozzle);
     lv_obj_set_width(ui_label_temp_nozzle_actual, LV_SIZE_CONTENT);   /// 1
@@ -46,7 +46,7 @@ void ui_ScreenTemp_screen_init(void)
     lv_label_set_text(ui_label_temp_nozzle_actual, "0°");
     lv_obj_set_style_text_color(ui_label_temp_nozzle_actual, lv_color_hex(0xab59ff), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui_label_temp_nozzle_actual, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui_label_temp_nozzle_actual, &ui_font_InterSemiBold48, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui_label_temp_nozzle_actual, &ui_font_InterSeimiBold32, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_btn_temp_bed = lv_imgbtn_create(ui_ScreenTemp);
     lv_imgbtn_set_src(ui_btn_temp_bed, LV_IMGBTN_STATE_RELEASED, NULL, &ui_img_sta_temp_png, NULL);

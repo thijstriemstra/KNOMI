@@ -37,6 +37,7 @@ void ui_ScreenPopup_screen_init(void)
     lv_obj_set_style_bg_color(ui_textarea_popup, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_textarea_popup, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_border_width(ui_textarea_popup, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_clear_flag(ui_textarea_popup, LV_OBJ_FLAG_SCROLLABLE);
 
     // Remove the style of scrollbar to have clean start
     lv_obj_remove_style(ui_textarea_popup, NULL, LV_PART_SCROLLBAR | LV_STATE_ANY);
