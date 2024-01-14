@@ -63,7 +63,7 @@ void lv_loop_popup_screen(void) {
         return;
     }
     if (moonraker.unready) {
-        lv_goto_popup_screen(LV_POPUP_PRINTER_ERR, "\nWaiting for\nprinter...");
+        lv_goto_popup_screen(LV_POPUP_PRINTER_ERR, "Waiting for\nprinter...");
         return;
     }
     lv_remove_popup_screen();
