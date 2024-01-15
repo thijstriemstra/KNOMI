@@ -51,7 +51,7 @@ static void lv_goto_idle_screen(void) {
     lv_screen_state = LV_MOONRAKER_STATE_IDLE;
 
     //
-    lv_gif_set_src(ui_img_main_gif, gif_idle[0]);
+    lv_gif_set_src(ui_img_main_gif, gif_idle[1]);
     lv_obj_add_flag(ui_ScreenMainGif, LV_OBJ_FLAG_CLICKABLE);
 
     // goto the screen backed up before
@@ -185,12 +185,17 @@ void lv_loop_moonraker_change_screen(void) {
     lv_goto_idle_screen();
 
     if (lv_scr_act() == ui_ScreenMainGif) {
-        static uint8_t gif_idle_index = 0;
+        static uint8_t gif_idle_index = 1;
         static uint32_t gif_idle_ms = 0;
 
+        // disable screen flip in idle mode every 7 seconds
+        // between &gif_voron and &gif_standby
         if (gif_idle_ms < millis()) {
             lv_gif_set_src(ui_img_main_gif, gif_idle[gif_idle_index]);
-            gif_idle_index = (gif_idle_index + 1) % ACOUNT(gif_idle);
+
+
+            //gif_idle_index = (gif_idle_index + 1) % ACOUNT(gif_idle);
+
             gif_idle_ms = millis() + 7000; // 7s
         }
     }

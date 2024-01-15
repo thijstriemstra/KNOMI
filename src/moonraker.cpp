@@ -96,10 +96,11 @@ void MOONRAKER::get_printer_ready(void) {
         deserializeJson(json_parse, webhooks);
         String state = json_parse["result"]["status"]["webhooks"]["state"].as<String>();
         unready = (state == "ready") ? false : true;
-#ifdef MOONRAKER_DEBUG
+        /*
         Serial.print("unready: ");
         Serial.println(unready);
-#endif
+        */
+
     } else {
         unready = true;
         Serial.println("Empty: moonraker: get_printer_ready");
@@ -120,9 +121,7 @@ void MOONRAKER::get_printer_info(void) {
         data.bed_target = int16_t(json_parse["temperature"]["bed"]["target"].as<double>() + 0.5f);
         data.nozzle_actual = int16_t(json_parse["temperature"][knomi_config.moonraker_tool]["actual"].as<double>() + 0.5f);
         data.nozzle_target = int16_t(json_parse["temperature"][knomi_config.moonraker_tool]["target"].as<double>() + 0.5f);
-#ifdef MOONRAKER_DEBUG
-        Serial.print("unoperational: ");
-        Serial.println(unoperational);
+        /*
         Serial.print("printing: ");
         Serial.println(data.printing);
         Serial.print("bed_actual: ");
@@ -133,7 +132,7 @@ void MOONRAKER::get_printer_info(void) {
         Serial.println(data.nozzle_actual);
         Serial.print("nozzle_target: ");
         Serial.println(data.nozzle_target);
-#endif
+        */
     } else {
         Serial.println("Empty: moonraker: get_printer_info");
     }
