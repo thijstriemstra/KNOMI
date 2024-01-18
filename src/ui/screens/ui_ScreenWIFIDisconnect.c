@@ -29,7 +29,7 @@ void ui_ScreenWIFIDisconnect_screen_init(void)
     lv_obj_set_y(ui_label_wifi_disconnect, -30);
     lv_obj_set_align(ui_label_wifi_disconnect, LV_ALIGN_BOTTOM_MID);
     lv_label_set_text(ui_label_wifi_disconnect,
-                      "Device has lost touch with the\n     network, please try restart\n         device or check the\n              WiFi condition.");
+                      "Device lost network\n connection, please restart");
     lv_obj_set_style_text_color(ui_label_wifi_disconnect, lv_color_hex(0x4082F4), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui_label_wifi_disconnect, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
 
