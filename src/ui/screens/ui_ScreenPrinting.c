@@ -19,7 +19,7 @@ void ui_ScreenPrinting_screen_init(void)
     lv_obj_set_y(ui_label_printing_progress, 50);
     lv_obj_set_align(ui_label_printing_progress, LV_ALIGN_TOP_MID);
     lv_label_set_text(ui_label_printing_progress, "0%");
-    lv_obj_set_style_text_color(ui_label_printing_progress, lv_color_hex(0x9329ff), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(ui_label_printing_progress, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui_label_printing_progress, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_font(ui_label_printing_progress, &ui_font_InterSemiBold48, LV_PART_MAIN | LV_STATE_DEFAULT);
 
@@ -37,7 +37,7 @@ void ui_ScreenPrinting_screen_init(void)
     lv_obj_set_style_arc_color(ui_arc_printing_progress, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_arc_opa(ui_arc_printing_progress, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    lv_obj_set_style_arc_color(ui_arc_printing_progress, lv_color_hex(0xC02F30), LV_PART_INDICATOR | LV_STATE_DEFAULT);
+    lv_obj_set_style_arc_color(ui_arc_printing_progress, lv_color_hex(0x310f91), LV_PART_INDICATOR | LV_STATE_DEFAULT);
     lv_obj_set_style_arc_opa(ui_arc_printing_progress, 255, LV_PART_INDICATOR | LV_STATE_DEFAULT);
     lv_obj_set_style_arc_width(ui_arc_printing_progress, 20, LV_PART_INDICATOR | LV_STATE_DEFAULT);
 
