@@ -19,7 +19,7 @@ void ui_ScreenWIFIConnecting_screen_init(void)
     lv_obj_clear_flag(ui_spinner_wifi_connecting, LV_OBJ_FLAG_CLICKABLE);      /// Flags
     lv_obj_set_style_arc_color(ui_spinner_wifi_connecting, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_arc_opa(ui_spinner_wifi_connecting, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_arc_width(ui_spinner_wifi_connecting, 30, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_arc_width(ui_spinner_wifi_connecting, 15, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     lv_obj_set_style_arc_color(ui_spinner_wifi_connecting, lv_color_hex(0xFFFFFF), LV_PART_INDICATOR | LV_STATE_DEFAULT);
     lv_obj_set_style_arc_opa(ui_spinner_wifi_connecting, 255, LV_PART_INDICATOR | LV_STATE_DEFAULT);
