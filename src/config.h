@@ -8,7 +8,7 @@
 
 #define SCAN_SSIDS_NUM 10     //  The max number of SSIDs that we will scan for.
 
-#define HOSTNAME "KNOMI1"
+#define HOSTNAME "KNOMI2"
 #define AP_SSID "KNOMI-COLLAB" // Create a SSID for BTT KNOMI Access Point
 #define AP_PWD "" // Default no password
 #define AP_LOCAL_IP IPAddress(192, 168, 20, 1) // access point IP
