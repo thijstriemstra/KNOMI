@@ -37,7 +37,7 @@ void ui_ScreenPrinting_screen_init(void)
     lv_obj_set_style_arc_color(ui_arc_printing_progress, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_arc_opa(ui_arc_printing_progress, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    lv_obj_set_style_arc_color(ui_arc_printing_progress, lv_color_hex(0x3b2382), LV_PART_INDICATOR | LV_STATE_DEFAULT);
+    lv_obj_set_style_arc_color(ui_arc_printing_progress, lv_color_hex(0x06bd9b), LV_PART_INDICATOR | LV_STATE_DEFAULT);
     lv_obj_set_style_arc_opa(ui_arc_printing_progress, 255, LV_PART_INDICATOR | LV_STATE_DEFAULT);
     lv_obj_set_style_arc_width(ui_arc_printing_progress, 10, LV_PART_INDICATOR | LV_STATE_DEFAULT);
 
