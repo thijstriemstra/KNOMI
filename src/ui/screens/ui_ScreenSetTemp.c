@@ -42,7 +42,7 @@ void ui_ScreenSetTemp_screen_init(void)
     lv_obj_set_x(ui_set_temp_target, 0);
     lv_obj_set_y(ui_set_temp_target, 72);
     lv_obj_set_align(ui_set_temp_target, LV_ALIGN_TOP_MID);
-    lv_label_set_text(ui_set_temp_target, "0℃");
+    lv_label_set_text(ui_set_temp_target, "0°");
     lv_obj_set_style_text_font(ui_set_temp_target, &ui_font_InterSeimiBold32, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     lv_obj_add_event_cb(ui_btn_set_temp_ok, ui_event_btn_set_temp_ok, LV_EVENT_ALL, NULL);

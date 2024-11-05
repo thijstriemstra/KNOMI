@@ -8,8 +8,8 @@
 
 #define SCAN_SSIDS_NUM 10     //  The max number of SSIDs that we will scan for.
 
-#define HOSTNAME "KNOMI"
-#define AP_SSID "BTT-KNOMI" // Create a SSID for BTT KNOMI Access Point
+#define HOSTNAME "KNOMI2"
+#define AP_SSID "KNOMI-COLLAB" // Create a SSID for BTT KNOMI Access Point
 #define AP_PWD "" // Default no password
 #define AP_LOCAL_IP IPAddress(192, 168, 20, 1) // access point IP
 #define AP_GATEWAY  IPAddress(192, 168, 20, 1) // gateway IP
@@ -22,6 +22,9 @@
 #define LV_32BIT_BTT_BLUE   0x209ADE
 #define LV_32BIT_BTT_PURPLE 0xA91DDA
 #define LV_32BIT_BTT_GREEN  0x5DA910
-#define LV_DEFAULT_COLOR    LV_32BIT_BTT_RED
+
+#define LV_32BIT_PURPLE     0x3c0f8a
+
+#define LV_DEFAULT_COLOR    LV_32BIT_PURPLE
 
 #endif

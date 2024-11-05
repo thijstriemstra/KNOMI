@@ -3,27 +3,38 @@ const char index_html[] PROGMEM = R"rawliteral(<!DOCTYPE html>
 display: inline-block;
 text-align: center;">
 <head>
-  <title>BTT KNOMI SETTINGS MANAGER</title>
+  <title>Device Settings Manager</title>
   <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     h1 {
       font-size: 1.8rem;
-      color: white;
+      color: black;
     }
     h2 {
       font-size: 0.8rem;
-      color: white;
+      color: black;
     }
     p {
       font-size: 1.4rem;
     }
+    svg {
+      margin-bottom: 2px;
+      margin-left: 15px;
+      margin-right: 20px; /* Adjust the value to add space between the image and text */
+    }
     .topnav {
       overflow: hidden;
-      background-color: #C02E2F;
+      display: flex;
+      align-items: center;
+      background: rgb(255,255,255);
+      background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 53%, rgba(231,231,231,1) 84%, rgba(193,193,193,1) 100%);
     }
     body {
       margin: 0;
+    }
+    .mainTitle {
+      align-self: right;
     }
     .content {
       padding: 5%;
@@ -55,7 +66,7 @@ text-align: center;">
     }
     input[id="sys-btn"] {
       border: none;
-      color: #FEFCFB;
+      color: #d2d4d4;
       padding: 15px 15px;
       text-align: center;
       text-decoration: none;
@@ -70,8 +81,8 @@ text-align: center;">
     }
     input[id="submit-btn"] {
       border: none;
-      color: #FEFCFB;
-      background-color: #C02E2F;
+      color: black;
+      background-color: #d2d4d4;
       padding: 10px 10px;
       text-align: center;
       text-decoration: none;
@@ -110,11 +121,11 @@ text-align: center;">
       padding: 10px;
       display: flex;
     }
-    .value{
+    .value {
       font-size: 1.2rem;
       color: #1282A2;
     }
-    .refresh-btn{
+    .refresh-btn {
       max-width: 800px;
       margin: 0 auto;
       position: relative;
@@ -123,8 +134,8 @@ text-align: center;">
       right: 0;
       width: 100%;
       border: none;
-      color: #FEFCFB;
-      background-color: #C02E2F;
+      color: black;
+      background-color: #d2d4d4;
       text-align: center;
       text-decoration: none;
       font-size: 16px;
@@ -177,8 +188,8 @@ text-align: center;">
         text-align: center;
     }
     table th {
-        background-color: #C02E2F;
-        color: white;
+        background-color: #d2d4d4;
+        color: black;
     }
     tr:nth-child(even) {background-color: #f2f2f2;}
     .modal {
@@ -227,7 +238,7 @@ text-align: center;">
       width: 100%;
       padding: 10px;
       border: none;
-      background: #C02E2F;
+      background: #d2d4d4;
       font-size: 16px;
       font-weight: 400;
       color: #fff;
@@ -282,7 +293,7 @@ text-align: center;">
         width: 100px;
     }
 
-    .form_item input{
+    .form_item input {
         width: 200px;
         height: 25px;
         line-height: 25px;
@@ -343,7 +354,7 @@ text-align: center;">
         padding-bottom: 10px;
     }
     .popup_btn button {
-        color: #778899;
+        color: black;
         width: 40%;
         height: 40px;
         cursor: pointer;
@@ -351,7 +362,7 @@ text-align: center;">
         border-radius: 5px;
         margin: 5px 10px;
         color: #ffffff;
-        background-color: #C02E2F;
+        background-color: #d2d4d4;
     }
 </style>
   <script>
@@ -377,9 +388,9 @@ text-align: center;">
             var port = document.getElementById("port").value;
             var tool = document.getElementById("tool").value;
             document.getElementById("popup_title_id").innerHTML="Klipper Config";
-            document.getElementById("popup_content_id").innerHTML="<div>" + "Klipper IP: "+ "<font color='#C02E2F'>" + ip + "</font><br>"
-                                                                + "Klipper Port: " + "<font color='#C02E2F'>" + port + "</font><br>"
-                                                                + "Tool ID: " + "<font color='#C02E2F'>" + tool + "</font><br></div>";
+            document.getElementById("popup_content_id").innerHTML="<div>" + "Klipper IP: "+ "<font color='black'>" + ip + "</font><br>"
+                                                                + "Klipper Port: " + "<font color='black'>" + port + "</font><br>"
+                                                                + "Tool ID: " + "<font color='black'>" + tool + "</font><br></div>";
 
             var popup_id = document.getElementById("popup_id");
             popup_id.style.display = "block";
@@ -398,10 +409,10 @@ text-align: center;">
             var pwd = document.getElementById("ap-pwd").value;
             var name = document.getElementById("hostname").value;
             document.getElementById("popup_title_id").innerHTML="KNOMI Config";
-            document.getElementById("popup_content_id").innerHTML="<div>" + "WiFi mode: "+ "<font color='#C02E2F'>" + mode + "</font><br>"
-                                                                + "AP SSID: " + "<font color='#C02E2F'>" + ssid + "</font><br>"
-                                                                + "AP PWD: " + "<font color='#C02E2F'>" + pwd + "</font><br>"
-                                                                + "Hostname: " + "<font color='#C02E2F'>" + name + "</font><br></div>";
+            document.getElementById("popup_content_id").innerHTML="<div>" + "WiFi mode: "+ "<font color='black'>" + mode + "</font><br>"
+                                                                + "AP SSID: " + "<font color='black'>" + ssid + "</font><br>"
+                                                                + "AP PWD: " + "<font color='black'>" + pwd + "</font><br>"
+                                                                + "Hostname: " + "<font color='black'>" + name + "</font><br></div>";
 
             var popup_id = document.getElementById("popup_id");
             popup_id.style.display = "block";
@@ -415,7 +426,7 @@ text-align: center;">
             popup_clicked = false;
             popup_btn = false;
             document.getElementById("popup_title_id").innerHTML="Restart?";
-            document.getElementById("popup_content_id").innerHTML="KNOMI will disconnect the network connection and restart<br>Please reconnect after KNOMI restart."
+            document.getElementById("popup_content_id").innerHTML="Device will disconnect from network and restart.<br>Please reconnect after device restarted."
 
             var popup_id = document.getElementById("popup_id");
             popup_id.style.display = "block";
@@ -437,7 +448,41 @@ text-align: center;">
 </head>
 <body>
   <div class="topnav">
-    <h1>BTT KNOMI SETTINGS MANAGER ;)</h1>
+    <svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="130.29948"
+   height="28.088511"
+   id="logo"
+   xml:space="preserve">
+     <g
+     transform="matrix(0.39011821,0,0,-0.39011821,0,28.088511)"
+     id="g10"><g
+       transform="scale(0.1,0.1)"
+       id="g12"><path
+         d="m 670,280 c 0,-77.883 62.875,-280 350,-280 284.76,0 360,183.152 360,280 0,83.445 -64.67,300 -360,300 C 732.875,580 670,363.445 670,280 z m 350,120 c 159.59,0 178.21,-89.141 179.89,-119.57 C 1198.28,260.371 1181.72,180 1020,180 869.75,180 851.824,254.961 850.098,280.41 851.605,310.676 868.945,400 1020,400"
+         id="path14"
+         style="fill:#2d2d3f;fill-opacity:1;fill-rule:nonzero;stroke:none" /><path
+         d="m 1420,0 180,0 0,720 -180,0 0,-720 z"
+         id="path16"
+         style="fill:#2d2d3f;fill-opacity:1;fill-rule:nonzero;stroke:none" /><path
+         d="m 1640,0 180,0 0,720 -180,0 0,-720 z"
+         id="path18"
+         style="fill:#2d2d3f;fill-opacity:1;fill-rule:nonzero;stroke:none" /><path
+         d="m 1860,280 c 0,-96.848 75.24,-280 360,-280 l 140.07,0 0,180 -140.07,0 c -161.72,0 -178.28,80.371 -179.89,100.43 1.68,30.429 20.3,119.57 179.89,119.57 162.43,0 178.87,-92.473 180,-121.262 C 2400,276.25 2400,0 2400,0 l 180,0 0,280 c 0,83.445 -64.67,300 -360,300 -295.33,0 -360,-216.555 -360,-300"
+         id="path20"
+         style="fill:#2d2d3f;fill-opacity:1;fill-rule:nonzero;stroke:none" /><path
+         d="m 2620,720 0,-440 c 0,-96.848 75.23,-280 360,-280 284.77,0 360,183.152 360,280 0,83.445 -64.67,300 -360,300 0,0 -100,0 -180,0 0,60.742 0,140 0,140 l -180,0 z m 360,-320 c 159.59,0 178.2,-89.141 179.88,-119.57 C 3158.28,260.371 3141.72,180 2980,180 c -165.14,0 -178.95,83.918 -180,101.738 0,0.93 0,71.348 0,118.262 80,0 180,0 180,0"
+         id="path22"
+         style="fill:#2d2d3f;fill-opacity:1;fill-rule:nonzero;stroke:none" /><path
+         d="M 360,580 C 64.6719,580 0,363.445 0,280 0,183.152 75.2383,0 360,0 l 270,0 0,180 -270,0 C 198.277,180 181.723,260.371 180.113,280.43 181.793,310.859 200.41,400 360,400 l 270,0 0,180 -270,0"
+         id="path24"
+         style="fill:#2d2d3f;fill-opacity:1;fill-rule:nonzero;stroke:none" /></g></g></svg>
+    <h1 class="mainTitle">Device Settings</h1>
   </div>
   <div class="content">
     <div class="card-grid">
@@ -519,12 +564,12 @@ text-align: center;">
     </div>
     <div class="card-grid">
       <div class="card">
-        <a href="update"><input type="submit" style="background-color: #C02E2F" id="sys-btn" value ="Update Firmware"></a>
+        <a href="update"><input type="submit" style="color: black; background-color: #d2d4d4" id="sys-btn" value ="Update Firmware"></a>
         <span style="width: 10px;"></span>
         <form id="restart-form" name="restart-form" action="/" method="POST">
             <input type="hidden" name="restart">
         </form>
-        <input type ="submit" style="background-color: #000000" id="sys-btn" value="Restart" onclick="showPopupRestart()">
+        <input type ="submit" style="background-color: #6b6d6e" id="sys-btn" value="Restart" onclick="showPopupRestart()">
       </div>
     </div>
     <div id="popup_id">

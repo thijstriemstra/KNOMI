@@ -51,7 +51,7 @@ static void lv_goto_idle_screen(void) {
     lv_screen_state = LV_MOONRAKER_STATE_IDLE;
 
     //
-    lv_gif_set_src(ui_img_main_gif, gif_idle[0]);
+    lv_gif_set_src(ui_img_main_gif, gif_idle[1]);
     lv_obj_add_flag(ui_ScreenMainGif, LV_OBJ_FLAG_CLICKABLE);
 
     // goto the screen backed up before
@@ -185,12 +185,16 @@ void lv_loop_moonraker_change_screen(void) {
     lv_goto_idle_screen();
 
     if (lv_scr_act() == ui_ScreenMainGif) {
-        static uint8_t gif_idle_index = 0;
+        static uint8_t gif_idle_index = 1;
         static uint32_t gif_idle_ms = 0;
 
+        // disable screen flip in idle mode every 7 seconds
+        // between &gif_voron and &gif_standby
         if (gif_idle_ms < millis()) {
             lv_gif_set_src(ui_img_main_gif, gif_idle[gif_idle_index]);
-            gif_idle_index = (gif_idle_index + 1) % ACOUNT(gif_idle);
+
+            //gif_idle_index = (gif_idle_index + 1) % ACOUNT(gif_idle);
+
             gif_idle_ms = millis() + 7000; // 7s
         }
     }
@@ -202,7 +206,7 @@ void lv_loop_moonraker_change_screen_value(void) {
     static int16_t nozzle_target;
     if (nozzle_target != moonraker.data.nozzle_target) {
         nozzle_target = moonraker.data.nozzle_target;
-        snprintf(string_buffer, sizeof(string_buffer), "%d℃", nozzle_target);
+        snprintf(string_buffer, sizeof(string_buffer), "%d°", nozzle_target);
         lv_label_set_text(ui_label_extruder_target, string_buffer);
         lv_label_set_text(ui_label_temp_nozzle_target, string_buffer);
         lv_label_set_text(ui_label_heating_nozzle_target, string_buffer);
@@ -211,7 +215,7 @@ void lv_loop_moonraker_change_screen_value(void) {
     static int16_t nozzle_actual;
     if (nozzle_actual != moonraker.data.nozzle_actual) {
         nozzle_actual = moonraker.data.nozzle_actual;
-        snprintf(string_buffer, sizeof(string_buffer), "%d℃", nozzle_actual);
+        snprintf(string_buffer, sizeof(string_buffer), "%d°", nozzle_actual);
         lv_label_set_text(ui_label_extruder_actual, string_buffer);
         lv_label_set_text(ui_label_temp_nozzle_actual, string_buffer);
         lv_label_set_text(ui_label_heating_nozzle_actual, string_buffer);
@@ -220,7 +224,7 @@ void lv_loop_moonraker_change_screen_value(void) {
     static int16_t bed_target;
     if (bed_target != moonraker.data.bed_target) {
         bed_target = moonraker.data.bed_target;
-        snprintf(string_buffer, sizeof(string_buffer), "%d℃", bed_target);
+        snprintf(string_buffer, sizeof(string_buffer), "%d°", bed_target);
         lv_label_set_text(ui_label_temp_bed_target, string_buffer);
         lv_label_set_text(ui_label_heating_bed_target, string_buffer);
     }
@@ -228,7 +232,7 @@ void lv_loop_moonraker_change_screen_value(void) {
     static int16_t bed_actual;
     if (bed_actual != moonraker.data.bed_actual) {
         bed_actual = moonraker.data.bed_actual;
-        snprintf(string_buffer, sizeof(string_buffer), "%d℃", bed_actual);
+        snprintf(string_buffer, sizeof(string_buffer), "%d°", bed_actual);
         lv_label_set_text(ui_label_temp_bed_actual, string_buffer);
         lv_label_set_text(ui_label_heating_bed_actual, string_buffer);
     }
@@ -239,6 +243,14 @@ void lv_loop_moonraker_change_screen_value(void) {
         lv_arc_set_value(ui_arc_printing_progress, progress);
         snprintf(string_buffer, sizeof(string_buffer), "%d%%", progress);
         lv_label_set_text(ui_label_printing_progress, string_buffer);
+        if (progress < 10) {
+            lv_obj_set_style_text_font(ui_label_printing_progress, &ui_font_InterSeimiBold86, LV_PART_MAIN | LV_STATE_DEFAULT);
+        } else {
+            lv_obj_set_style_text_font(ui_label_printing_progress, &ui_font_InterSeimiBold72, LV_PART_MAIN | LV_STATE_DEFAULT);
+        }
+        if (progress == 100) {
+            lv_obj_set_style_text_font(ui_label_printing_progress, &ui_font_InterSeimiBold36, LV_PART_MAIN | LV_STATE_DEFAULT);
+        }
     }
 #ifdef LIS2DW_SUPPORT
     // accelerometer

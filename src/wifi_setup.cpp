@@ -152,9 +152,9 @@ void wifi_scan_refresh(void) {
         }
     } else if (n == WIFI_SCAN_FAILED) {
         // scanDeleted or failed
-        // Serial.println("Scan faile!");
+        // Serial.println("Scan failed!");
     } else if (n == WIFI_SCAN_RUNNING) {
-        Serial.println("Scaning...");
+        Serial.println("Scanning...");
     }
 }
 
