@@ -15,13 +15,25 @@ void ui_ScreenPrinting_screen_init(void)
     ui_label_printing_progress = lv_label_create(ui_ScreenPrinting);
     lv_obj_set_width(ui_label_printing_progress, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(ui_label_printing_progress, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_label_printing_progress, 3.5);
-    lv_obj_set_y(ui_label_printing_progress, 45);
+    lv_obj_set_x(ui_label_printing_progress, -11);
+    lv_obj_set_y(ui_label_printing_progress, 40);
     lv_obj_set_align(ui_label_printing_progress, LV_ALIGN_TOP_MID);
     lv_label_set_text(ui_label_printing_progress, "0%");
     lv_obj_set_style_text_color(ui_label_printing_progress, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui_label_printing_progress, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_font(ui_label_printing_progress, &ui_font_InterSeimiBold72, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_label_printing_progress_percentage = lv_label_create(ui_ScreenPrinting);
+    lv_obj_set_width(ui_label_printing_progress_percentage, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_label_printing_progress_percentage, LV_SIZE_CONTENT);    /// 1
+    //lv_obj_set_x(ui_label_printing_progress_percentage, 3.5);
+    //lv_obj_set_y(ui_label_printing_progress_percentage, 75);
+    //lv_obj_set_align(ui_label_printing_progress_percentage, LV_ALIGN_TOP_MID);
+    //lv_obj_align_to(ui_label_printing_progress_percentage, ui_label_printing_progress, LV_ALIGN_OUT_RIGHT_BOTTOM, 5, 15);
+    lv_label_set_text(ui_label_printing_progress_percentage, "%");
+    lv_obj_set_style_text_color(ui_label_printing_progress_percentage, lv_color_hex(0x9c9a9a), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui_label_printing_progress_percentage, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui_label_printing_progress_percentage, &ui_font_InterSemiBold24, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_arc_printing_progress = lv_arc_create(ui_ScreenPrinting);
     lv_obj_set_width(ui_arc_printing_progress, 212);

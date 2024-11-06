@@ -110,6 +110,7 @@ void ui_ScreenPrinting_screen_init(void);
 void ui_event_ScreenPrinting(lv_event_t * e);
 lv_obj_t * ui_ScreenPrinting;
 lv_obj_t * ui_label_printing_progress;
+lv_obj_t * ui_label_printing_progress_percentage;
 lv_obj_t * ui_arc_printing_progress;
 lv_obj_t * ui_slider_printing_acc_x;
 lv_obj_t * ui_label_printing_acc_x;

@@ -50,7 +50,7 @@ void lv_theme_color_style(void) {
         ui_btn_test_wifi,
     };
     for (uint16_t i = 0; i < ACOUNT(img_obj); i++) {
-        lv_obj_set_style_img_recolor(img_obj[i], lv_theme_color(), LV_PART_MAIN | LV_STATE_DEFAULT);
+        lv_obj_set_style_img_recolor(img_obj[i], lv_color_hex(0x06bd9b), LV_PART_MAIN | LV_STATE_DEFAULT);
         lv_obj_set_style_img_recolor_opa(img_obj[i], opa, LV_PART_MAIN | LV_STATE_DEFAULT);
     }
 
@@ -61,11 +61,12 @@ void lv_theme_color_style(void) {
         ui_roller,
     };
     for (uint16_t i = 0; i < ACOUNT(bg_img_obj); i++) {
-        lv_obj_set_style_bg_img_recolor(bg_img_obj[i], lv_theme_color(), LV_PART_SELECTED | LV_STATE_DEFAULT);
+        lv_obj_set_style_bg_img_recolor(bg_img_obj[i], lv_color_hex(0x06bd9b), LV_PART_SELECTED | LV_STATE_DEFAULT);
         lv_obj_set_style_bg_img_recolor_opa(bg_img_obj[i], opa, LV_PART_SELECTED | LV_STATE_DEFAULT);
     }
 
     lv_obj_t * const indicator_img_obj[] = {
+        // ScreenHeatingNozzle
         ui_slider_heating_nozzle,
         // ScreenHeatingBed
         ui_slider_heating_bed,
@@ -73,7 +74,7 @@ void lv_theme_color_style(void) {
         ui_slider_backlight,
     };
     for (uint16_t i = 0; i < ACOUNT(indicator_img_obj); i++) {
-        lv_obj_set_style_bg_img_recolor(indicator_img_obj[i], lv_theme_color(), LV_PART_INDICATOR | LV_STATE_DEFAULT);
+        lv_obj_set_style_bg_img_recolor(indicator_img_obj[i], lv_color_hex(0x06bd9b), LV_PART_INDICATOR | LV_STATE_DEFAULT);
         lv_obj_set_style_bg_img_recolor_opa(indicator_img_obj[i], opa, LV_PART_INDICATOR | LV_STATE_DEFAULT);
     }
 

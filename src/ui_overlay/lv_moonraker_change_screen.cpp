@@ -245,9 +245,11 @@ void lv_loop_moonraker_change_screen_value(void) {
         snprintf(string_buffer, sizeof(string_buffer), "%d", progress);
         lv_label_set_text(ui_label_printing_progress, string_buffer);
         if (progress < 10) {
-            lv_obj_set_style_text_font(ui_label_printing_progress, &ui_font_InterSeimiBold86, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_text_font(ui_label_printing_progress, &ui_font_InterSeimiBold96, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_align_to(ui_label_printing_progress_percentage, ui_label_printing_progress, LV_ALIGN_OUT_RIGHT_BOTTOM, -10, 0);
         } else {
-            lv_obj_set_style_text_font(ui_label_printing_progress, &ui_font_InterSeimiBold72, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_text_font(ui_label_printing_progress, &ui_font_InterSeimiBold96, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_align_to(ui_label_printing_progress_percentage, ui_label_printing_progress, LV_ALIGN_OUT_RIGHT_BOTTOM, 5, -17);
         }
         if (progress == 100) {
             lv_obj_set_style_text_font(ui_label_printing_progress, &ui_font_InterSeimiBold36, LV_PART_MAIN | LV_STATE_DEFAULT);

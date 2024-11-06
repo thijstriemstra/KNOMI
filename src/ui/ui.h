@@ -109,6 +109,7 @@ void ui_ScreenPrinting_screen_init(void);
 void ui_event_ScreenPrinting(lv_event_t * e);
 extern lv_obj_t * ui_ScreenPrinting;
 extern lv_obj_t * ui_label_printing_progress;
+extern lv_obj_t * ui_label_printing_progress_percentage;
 extern lv_obj_t * ui_arc_printing_progress;
 extern lv_obj_t * ui_slider_printing_acc_x;
 extern lv_obj_t * ui_label_printing_acc_x;
@@ -261,6 +262,7 @@ LV_IMG_DECLARE(ui_img_btn_cancel_png);    // assets\btn_cancel.png
 LV_IMG_DECLARE(ui_img_popup_png);    // assets\popup.png
 LV_IMG_DECLARE(ui_img_test_png);    // assets\test.png
 
+LV_FONT_DECLARE(ui_font_InterSeimiBold96);
 LV_FONT_DECLARE(ui_font_InterSeimiBold86);
 LV_FONT_DECLARE(ui_font_InterSeimiBold72);
 LV_FONT_DECLARE(ui_font_InterSeimiBold36);
