@@ -31,7 +31,7 @@ void ui_ScreenPrinting_screen_init(void)
     //lv_obj_set_align(ui_label_printing_progress_percentage, LV_ALIGN_TOP_MID);
     //lv_obj_align_to(ui_label_printing_progress_percentage, ui_label_printing_progress, LV_ALIGN_OUT_RIGHT_BOTTOM, 5, 15);
     lv_label_set_text(ui_label_printing_progress_percentage, "%");
-    lv_obj_set_style_text_color(ui_label_printing_progress_percentage, lv_color_hex(0x9c9a9a), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(ui_label_printing_progress_percentage, lv_color_hex(0xd4d2d2), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui_label_printing_progress_percentage, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_font(ui_label_printing_progress_percentage, &ui_font_InterSemiBold24, LV_PART_MAIN | LV_STATE_DEFAULT);
 

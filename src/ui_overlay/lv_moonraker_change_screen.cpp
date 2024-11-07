@@ -33,7 +33,10 @@ static void lv_goto_busy_screen(lv_obj_t * screen, lv_screen_state_t state, cons
     lv_screen_state = state;
 
     //
-    if (gif) lv_gif_set_src(ui_img_main_gif, gif);
+    if (gif) {
+        lv_gif_set_src(ui_img_main_gif, gif);
+        lv_obj_set_style_bg_img_recolor(ui_img_main_gif, lv_color_hex(0x06bd9b), LV_PART_SELECTED | LV_STATE_DEFAULT);
+    }
     lv_obj_clear_flag(ui_ScreenMainGif, LV_OBJ_FLAG_CLICKABLE);
 
     // backup now screen, cause lv_scr_act() is delayed updates
@@ -52,6 +55,7 @@ static void lv_goto_idle_screen(void) {
 
     //
     lv_gif_set_src(ui_img_main_gif, gif_idle[1]);
+    lv_obj_set_style_bg_img_recolor(ui_img_main_gif, lv_color_hex(0x06bd9b), LV_PART_SELECTED | LV_STATE_DEFAULT);
     lv_obj_add_flag(ui_ScreenMainGif, LV_OBJ_FLAG_CLICKABLE);
 
     // goto the screen backed up before
@@ -244,15 +248,12 @@ void lv_loop_moonraker_change_screen_value(void) {
         //snprintf(string_buffer, sizeof(string_buffer), "%d%%", progress);
         snprintf(string_buffer, sizeof(string_buffer), "%d", progress);
         lv_label_set_text(ui_label_printing_progress, string_buffer);
-        if (progress < 10) {
-            lv_obj_set_style_text_font(ui_label_printing_progress, &ui_font_InterSeimiBold96, LV_PART_MAIN | LV_STATE_DEFAULT);
-            lv_obj_align_to(ui_label_printing_progress_percentage, ui_label_printing_progress, LV_ALIGN_OUT_RIGHT_BOTTOM, -10, 0);
+        if (progress == 100) {
+            lv_obj_set_style_text_font(ui_label_printing_progress, &ui_font_InterSeimiBold72, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_align_to(ui_label_printing_progress_percentage, ui_label_printing_progress, LV_ALIGN_OUT_RIGHT_BOTTOM, 5, -17);
         } else {
             lv_obj_set_style_text_font(ui_label_printing_progress, &ui_font_InterSeimiBold96, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_align_to(ui_label_printing_progress_percentage, ui_label_printing_progress, LV_ALIGN_OUT_RIGHT_BOTTOM, 5, -17);
-        }
-        if (progress == 100) {
-            lv_obj_set_style_text_font(ui_label_printing_progress, &ui_font_InterSeimiBold36, LV_PART_MAIN | LV_STATE_DEFAULT);
         }
     }
 #ifdef LIS2DW_SUPPORT
