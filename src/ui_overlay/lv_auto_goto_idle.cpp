@@ -6,6 +6,9 @@
 static uint32_t touch_idle_sec = 0;
 
 void touch_idle_time_clear(void) {
+    // enable backlight
+    //digitalWrite(LCD_BL_PIN, HIGH);
+    //delayMicroseconds(25); // > 20us for poweron
     touch_idle_sec = 0;
 }
 
@@ -28,6 +31,9 @@ void lv_loop_auto_idle(wifi_status_t status) {
         lv_gif_set_src(ui_img_main_gif, gif_idle[0]);
         lv_obj_add_flag(ui_ScreenMainGif, LV_OBJ_FLAG_CLICKABLE);
         _ui_screen_change(&ui_ScreenMainGif, LV_SCR_LOAD_ANIM_NONE, 500, 0, NULL);
+        // disable backlight
+        //digitalWrite(LCD_BL_PIN, LOW);
+        //delay(3); // > 2.5ms for shutdown
         touch_idle_sec = 0;
     }
 }
